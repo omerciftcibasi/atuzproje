@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Atuz Proje</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #f8c300;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  .mainPostImg {
+    filter: sepia(100) brightness(0.8);
+    width: 100%;
+    height: auto;
+    max-width: 1050px;
+    transition: transform .2s;
+
+  }
+
+  .mainPostImg:hover {
+    filter: sepia(0);
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+
+  }
+
+  .img-wrapper {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imgTextOver {
+
+  position: absolute;
+top: 0;
+bottom: 0;
+left: 50%;
+right: 0;
+height: 100%;
+width: 50%;
+opacity: 0.7;
+transition: .5s ease;
+background-image: url('./images/sh-caption-bg.png');
+background-size: cover;
+
+
+  }
+
+  .textOver {
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.collapse2 {
+    display: none;
+
+}
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+    .navbar-nav>li.active a { color: white !important; background-color: red !important; border-top: 0px; }
+
+
+    .collapse2 {
+        display: none;
+
+    }
+    .mainPostImg {
+      width: 100%;
+      height: auto;
+      max-width: 750px;
+      filter: sepia(0);
+
+    }
+
+    .imgTextOver {
+
+      position: absolute;
+    top: 70%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    width: 100%;
+        transition: .5s ease;
+    background-color: #000000;
+    opacity: 0.7
+    background-image: none;
+    display: none;
+
+      }
+
+
+
+  }
+
+.subWrapper {
+position:relative;
+background-color:#222222;
+margin: 0 auto;
+width:auto;
+height: auto;
+display: inline-block;
+
+}
+
+.subWrapper:hover img {
+  filter: sepia(0) brightness(0.9);
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+
+}
+
+
+.navbar-nav>li.active a { color: black !important; background-color: transparent !important; border-top: 4px black solid; }
+.navbar-nav>li>a { color: #555 !important;}
+.navbar-toggle span {
+  background-color: #333 !important;
+}
+
+.navbar-toggle:hover span {
+  background-color: #f8c300 !important;
+}
+
+
+
+.jumbotron {
+
+background: linear-gradient(to bottom, #f8c300 50px, #222 1px, #222 500px);
+
+/*
+background: url("./images/blackorangebg.png") no-repeat;
+background-size: cover;*/
+border: solid #f8c300 1px;
+padding-top: 0px;
+
+color: #ddd;
+}
+
+.jumbotron h1 {
+  text-align: center;
+  color: navy;
+  font-size: 28px;
+
+}
+
+  </style>
+</head>
+<body style="background-color:#222222">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style=" opacity:0.9">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+
+
+      <img src="logo.png" height="51" width="167" style="margin-top:5px;"/>
+
+    </div>
+
+    <div class="collapse navbar-collapse" style="margin-left:120px;" id="myNavbar">
+
+      <ul class="nav navbar-nav" >
+        <li><a href="#main">Anasayfa</a></li>
+        <li><a href="#about">Kurumsal</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#references">Referanslar</a></li>
+        <li><a href="#contact">Iletisim</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="main" class="container-fluid">
+
+
+<div style="height:70px;">
+
+</div>
+
+
+<div style="width:100%; text-align: center; vertical-align:middle;"  >
+
+<div id="myCarousel" class="carousel slide subWrapper" data-ride="carousel" style="max-width:1050px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/haberler/BALIKESİR BİGADİÇ 4 EYLÜL ORTAOKULU.png" alt="Image">
+        <div class="carousel-caption">
+          <h3>BİGADİÇ 4 EYLÜL ORTAOKULU</h3>
+          <p>BİGADİÇ BALIKESİR</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/haberler/GÖLBAŞI ANADOLU LİSESİ GÖLBAŞI ANKARA.png" alt="Image">
+        <div class="carousel-caption">
+          <h3>GÖLBAŞI ANADOLU LİSESİ</h3>
+          <p>GÖLBAŞI ANKARA</p>
+        </div>
+      </div>
+
+    <div class="item">
+      <img src="images/haberler/DÜZCE CUMAYERİ YATILI BÖLGE ORTAOKULU.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>CUMAYERİ YATILI BÖLGE ORTAOKULU</h3>
+        <p>DÜZCE CUMAYERİ</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/HACI ÖMER TARMAN ANADOLU LİSESİ ÇANKAYA ANKARA.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>HACI ÖMER TARMAN ANADOLU LİSESİ</h3>
+        <p>ÇANKAYA ANKARA</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/HACI ÖMER TARMAN ANADOLU LİSESİ ÇANKAYA.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>HACI ÖMER TARMAN ANADOLU LİSESİ</h3>
+        <p>ÇANKAYA ANKARA</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/İSMET YILMAZ İMAM HATİP ORTAOKULU SİVAS GÜRÜN.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>İSMET YILMAZ İMAM HATİP ORTAOKULU</h3>
+        <p>SİVAS GÜRÜN</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/KAHRAMANMARAŞ AFŞİNBEY ORTAOKULU.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>AFŞİNBEY ORTAOKULU</h3>
+        <p>KAHRAMANMARAŞ AFŞİNBEY</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/MALATYA FETHİ GEMÜHLÜOĞLU FEN LİSESİ.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>FETHİ GEMÜHLÜOĞLU FEN LİSESİ</h3>
+        <p>MALATYA</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/ZONGULDAK ALAPLI İMKB MESLEK LİSESİ.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>ALAPLI İMKB MESLEK LİSESİ</h3>
+        <p>ZONGULDAK</p>
+      </div>
+    </div>
+
+
+  </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+<!--- section ATUZ PROJE-->
+<div style="height:20px;">
+
+</div>
+
+<div style="width:100%; text-align: center; vertical-align:middle;"  >
+
+<div id="myCarousel2" class="carousel slide subWrapper" data-ride="carousel" style="max-width:1050px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel2" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/haberler/kutup4.png" alt="Image">
+        <div class="carousel-caption">
+          <h3>ATUZ PROJE</h3>
+          <p>Universite Kutuphane Projesi</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/haberler/kutup9.png" alt="Image">
+        <div class="carousel-caption">
+          <h3>ATUZ PROJE</h3>
+          <p>Universite Kutuphane Projesi</p>
+        </div>
+      </div>
+
+    <div class="item">
+      <img src="images/haberler/kutup11.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>ATUZ PROJE</h3>
+        <p>Universite Kutuphane Projesi</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/pc3.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>ATUZ PROJE</h3>
+        <p>Bilisim Sinifi Projesi</p>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+
+<!-- Endvof ATUZ PROJE -->
+
+
+<!--- section ATUZ diger-->
+<div style="height:20px;">
+
+</div>
+
+<div style="width:100%; text-align: center; vertical-align:middle;"  >
+
+<div id="myCarousel3" class="carousel slide subWrapper" data-ride="carousel" style="max-width:1050px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel3" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/haberler/arge.png" alt="Image">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/haberler/arge2.png" alt="Image">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+
+    <div class="item">
+      <img src="images/haberler/medikal.png" alt="Image">
+      <div class="carousel-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/haberler/yonlendirme.png" alt="Image">
+      <div class="carousel-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/haberler/makam.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>ATUZ MOBILYA</h3>
+        <p>Buro ve Makam Odasi Mobilyalari </p>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+
+<!-- Endvof ATUZ PROJE -->
+
+
+
+
+<div style="height:30px;">
+
+</div>
+
+<div style="width:100%;  text-align: center; vertical-align:middle;"  >
+  <div class="subWrapper">
+    <div class="img-wrapper">
+    <img class="mainPostImg" src="image2.jpeg" height="250" width="750" />
+  </div>
+  <div class="imgTextOver">
+    <div class="textOver">
+    HACI ÖMER TARMAN ANADOLU LİSESİ ÇANKAYA ANKARA
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div style="height:30px;">
+
+</div>
+
+
+<div style="width:100%; text-align: center; vertical-align:middle;"  >
+<div class="subWrapper">
+  <div class="img-wrapper">
+    <img class="mainPostImg" src="image1.jpeg"/>
+  </div>
+  <div class="imgTextOver">
+    <div class="textOver">
+    GÖLBAŞI ANADOLU LİSESİ GÖLBAŞI ANKARA
+  </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+<div id="about" class="container-fluid">
+  <div style="height:70px;">
+
+  </div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Kurumsal</h1>
+
+    <div class="media">
+      <div class="media-left">
+        <img src="http://www.tematik.net/images/vz.png" class="media-object" style="width:200px; float: left; margin: 0px 15px 15px 0px;">
+      </div>
+      <span>
+        <h4 class="media-heading">Misyonumuz</h4>
+        <p>Geniş iş alanlarında proje bazlı faaliyet gösteren şirketimiz, her zaman müşteri memnuniyetini ideal edinip bütün profesyonel çalışmalarını amatör ruhla devam ettirmeyi, tüm çalışmalarında insan ve ona karşı olan sorumluluğunu felsefe edinip, özgün tasarımları ile sizlerin istekleri ve zevklerini harmanlayıp teknik , ekonomik çözümler üretip,
+        İlk , tek ve hep… insan memnuniyeti inancıyla hizmet vermektedir.</p>
+      </span>
+    </div>
+
+
+
+    <div class="media">
+
+      <span>
+        <h4 class="media-heading">Vizyonumuz</h4>
+        <p>
+          Firmamızın ulusal veya uluslararası pazarda etkinliğini ve verimliliğini arttırmak amacıyla kendi uzmanlık alanımızda kendi yöntemlerini sürekli geliştiren, kalite ve güvenliği ön planda tutan, müşteri memnuniyetini esas alan, faaaliyet gösterdiği birçok alanda sektörün öncülüğünü yapan, Türkiye´nin en güvenilir, örnek ve saygın kuruluşu olmayı  kendine vizyon edinmiştir.
+        </p>
+      </span>
+      <div class="media-right">
+        <img src="http://www.tematik.net/images/icon_leadership.png" class="media-object" style="width:200px; float: left; margin: 0px 15px 15px 0px;">
+      </div>
+    </div>
+
+
+        <h3> Kalite politikamız </h3>
+            <p>
+
+<ul style="font-size:14px;">
+  <li>Müşteri odaklılık</li>
+  <li>Özgün tasarım</li>
+  <li>Proje ve montaj garantisi</li>
+  <li>Sürekli iyileştirme ve gelişim</li>
+  <li>Sürdürülebilirlik</li>
+  <li>Satış sonrası servis destek</li>
+</ul>
+
+            </p>
+
+  </div>
+
+</div>
+
+</div>
+
+<div id="services" class="container-fluid">
+  <div style="height:70px;">
+
+  </div>
+  <div class="container">
+<div class="jumbotron">
+
+<h1>Hizmetler</h1>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#arge">AR-GE Projeleri</a></li>
+    <li><a data-toggle="tab" href="#yon">Yonlendirme Levhalari</a></li>
+    <li><a data-toggle="tab" href="#proje">ATUZ Proje</a></li>
+    <li><a data-toggle="tab" href="#insaat">ATUZ Insaat</a></li>
+    <li><a data-toggle="tab" href="#medikal">ATUZ Medikal</a></li>
+    <li><a data-toggle="tab" href="#mobilya">ATUZ Mobilya</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="arge" class="tab-pane fade in active">
+      <h3>AR-GE Projeleri</h3>
+      <p>Some content.</p>
+    </div>
+    <div id="yon" class="tab-pane fade">
+      <h3>Yonlendirme Levhalari</h3>
+      <p>Some content in menu 1.</p>
+    </div>
+    <div id="proje" class="tab-pane fade">
+      <h3>ATUZ Proje</h3>
+      <p>Some content in menu 2.</p>
+    </div>
+    <div id="insaat" class="tab-pane fade">
+      <h3>ATUZ Insaat</h3>
+      <p>Some content.</p>
+    </div>
+    <div id="medikal" class="tab-pane fade">
+      <h3>ATUZ Medikal</h3>
+      <p>Some content in menu 1.</p>
+    </div>
+    <div id="mobilya" class="tab-pane fade">
+      <h3>ATUZ Mobilya</h3>
+      <p>Some content in menu 2.</p>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+<div class="container-fluid" id="projects">
+  <div class="container">
+
+
+  <div class="jumbotron">
+    <h1>Projeler</h1>
+    <p>Some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+</div>
+</div>
+
+<div class="container-fluid" id="references">
+  <div class="container">
+
+
+  <div class="jumbotron">
+    <h1>Referanslar</h1>
+    <p>Some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+</div>
+</div>
+
+
+
+<div id="contact" class="container-fluid">
+  <div class="container">
+
+
+<div class="jumbotron">
+  <h1>Iletisim</h1>
+
+  <div class="row">
+      <div class="col-md-8">
+        <div id="map">
+          <iframe class="img-responsive" style="width: 100%; height: 350px;border: 2px #222 solid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d661.8272920203757!2d32.76818458455405!3d39.950878578949364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34901849eeccf%3A0xd38a579c68d000bc!2sATuz+proje+Mimarl%C4%B1k!5e0!3m2!1str!2str!4v1523194515872" frameborder="1"allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+                                  <h3>BİZE ULAŞIN</h3>
+
+                                  <div class="widget widget-address">
+
+                                      <address>
+
+                                          <span>MACUN MAHALLESİ 177. CADDE NO 19 H2 BLOK YENİMAHALLE-ANKARA<br>TİMKO BLOKLARI&nbsp;</span>
+
+                                          <span><strong>Telefon:</strong>0312 340 61 61</span>
+
+                                          <span><strong>Fax:</strong>0312 340 41 61</span>
+
+                                          <span><strong>E-mail:</strong><a href="mailto:info@atuzproje.com">info@atuzproje.com</a></span>
+
+
+
+                                      </address>
+
+                                  </div>
+
+                              </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+<div style="height:100px;">
+
+</div>
+
+
+</div>
+</div>
+
+<footer style="background-color:#000">
+  <div class="footer" >
+
+                      <div class="container">
+
+                          <div class="row">
+
+                              <div class="col-sm-6 text-left" style="color: orange !important;">
+
+                                  Copyright 2018 © Atuzproje.com
+                              </div>
+
+                              <div class="col-sm-6 text-right" style="color: darkorange !important;">
+                                  Designed by <b>[OC]</b>
+                              </div>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+
+
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+/*
+      var current =$(this).closest("li")
+      $(this).closest("ul").find("li").each(function() {
+          if ($(this) !== current) {
+            $(this).css("border-top","none")
+            $(this).css("color","#333")
+          }
+      });
+      current.css("border-top","white 4px solid");
+      current.css("color","#FFF")
+
+*/
+
+    }  // End if
+  });
+});
+
+
+$("#myNavbar").find("a").click(function() {
+  $("#myNavbar").removeClass("in");
+});
+
+
+</script>
+
+
+</body>
+</html>
